@@ -19,4 +19,3 @@ proc posOrNeg(num: int): string =
  
 proc main() {.exportwasm.}=
     echo posOrNeg(0)
-
