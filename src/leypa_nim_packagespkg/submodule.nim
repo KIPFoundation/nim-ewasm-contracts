@@ -4,8 +4,8 @@
 # this file as required.
 
 import macros
+proc posOrNeg*(): string
 
-proc getWelcomeMessage*(): string = "Hello, World!"
 macro exportwasm*(p: untyped): untyped =
     expectKind(p, nnkProcDef)
     result = p

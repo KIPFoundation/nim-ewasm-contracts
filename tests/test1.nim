@@ -6,10 +6,17 @@
 # To run these tests, simply execute `nimble test`.
 
 import unittest
+import leypa_nim_packagespkg/submodule
 
-
-import leypa_nim_packagespkg/submodule 
-proc mains() {.exportwasm.} =
-    test "correct welcome" : check getWelcomeMessage() == "Hello, World!"
- #echo getWelcomeMessage() == "Hello, World!"
+proc posOrNeg(num: int): string =
+    result = case num:
+      of low(int).. -1:
+        "Red"
+      of 1..high(int):
+        "Green"
+      else:
+        "zero"
+ 
+proc main() {.exportwasm.}=
+    echo posOrNeg(0)
 
